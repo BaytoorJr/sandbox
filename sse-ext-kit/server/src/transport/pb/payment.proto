@@ -1,0 +1,32 @@
+syntax = "proto3";
+option go_package = "./;events";
+package events;
+
+import "google/protobuf/timestamp.proto";
+
+service PaymentService {
+  rpc ListenPaymentChanges(ListenPaymentChangesRequest) returns (stream Payment);
+}
+
+message ListenPaymentChangesRequest {
+  string QrID = 1;
+}
+
+message Payment {
+    string ID = 1;
+    string Type = 2;
+    string ServiceMappingType = 3;
+    string ServiceMappingID = 4;
+    string CompanyID = 5;
+    optional string ManagerID = 6;
+    string AccountNumber = 7;
+    string Amount = 8;
+    optional string ReceiptNumber = 9;
+    string PayerShortName = 10;
+    string PayerPhoneNumber = 11;
+    optional string Description = 12;
+    string Status = 13;
+    google.protobuf.Timestamp CreatedAt = 14;
+}
+
+
