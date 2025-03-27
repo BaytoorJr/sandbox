@@ -1,0 +1,15 @@
+syntax = "proto3";
+option go_package = "./;events";
+package events;
+
+service EventService {
+  rpc StreamEvents(Empty) returns (stream PaymentStatus);
+}
+
+message Empty {}
+
+message PaymentStatus {
+  int32 id = 1;
+  string status = 2;
+  string amount = 3;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSE Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #007BFF;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        #sse-data-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: white;
+            padding: 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .sse-item {
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+            border-bottom: 1px solid #ddd;
+        }
+        .sse-item:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>SSE Example</h1>
+</header>
+
+<div id="sse-data-container">
+    <h2>Incoming Events:</h2>
+    <div id="sse-data"></div>
+</div>
+
+<script>
+    const eventSource = new EventSource('http://localhost:8080/events');
+
+    eventSource.onmessage = function(event) {
+        const dataElement = document.getElementById('sse-data');
+
+        // Create a new div for the incoming event
+        const eventDiv = document.createElement('div');
+        eventDiv.className = 'sse-item';
+        eventDiv.textContent = event.data;
+
+        // Append the new event to the container
+        dataElement.appendChild(eventDiv);
+    };
+
+    eventSource.onerror = function() {
+        console.error('Error occurred with the SSE connection.');
+        eventSource.close();
+    };
+</script>
+
+</body>
+</html>

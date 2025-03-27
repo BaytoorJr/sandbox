@@ -1,0 +1,16 @@
+{
+  "BuyingCookies": {
+    "one": "ОДИН",
+    "zero": "НОЛЬ",
+    "many": "Ты покупаешь {{.PluralForm}} яблок",
+    "other": "ДРУГОЕ",
+    "few": "Немножко"
+  },
+  "BuyingApples": {
+    "one": "Ты покупаешь 1 яблоко",
+    "zero": "Ты не купил яблок",
+    "many": "Ты купил {{.PluralCount}} яблок",
+    "other": "Ты купил {{.PluralCount}} яблок: other",
+    "few": "Ты купил несколько яблок"
+  }
+}

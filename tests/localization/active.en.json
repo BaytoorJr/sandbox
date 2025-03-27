@@ -1,0 +1,16 @@
+{
+  "BuyingCookies": {
+    "one": "You're buying 1 cookie.",
+    "other": "You're buying {{.PluralCount}} cookies.",
+    "zero": "You did not buy anything",
+    "many": "You're buying {{.PluralCount}} cookies.",
+    "few": "few"
+  },
+  "BuyingApples": {
+    "one": "You are buying 1 apple",
+    "other": "You are buying {{.PluralCount}} apples: other",
+    "zero": "You did not buy any apple",
+    "many": "You are buying {{.PluralCount}} apples",
+    "few": "You are buying few apples"
+  }
+}

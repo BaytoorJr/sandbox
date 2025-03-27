@@ -1,0 +1,180 @@
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	myString := `3c9710b2-d735-11ef-9330-8a89007beaac
+b171d81b-d735-11ef-9330-8a89007beaac
+fd586e83-d73a-11ef-9330-8a89007beaac
+0cea2152-cc09-11ef-a280-ca725e5d616c
+dea1455b-cd1e-11ef-a280-ca725e5d616c
+6ed46ffe-cd90-11ef-a280-ca725e5d616c
+bda0f948-ce7a-11ef-a280-ca725e5d616c
+3417e81f-ce5f-11ef-a280-ca725e5d616c
+49983545-cf49-11ef-a280-ca725e5d616c
+97e9ea6d-cf26-11ef-a280-ca725e5d616c
+f88442e6-cfe4-11ef-a280-ca725e5d616c
+437329ac-d127-11ef-a280-ca725e5d616c
+08a5c649-d177-11ef-a280-ca725e5d616c
+f88a3afa-d223-11ef-a280-ca725e5d616c
+e55e00f6-d244-11ef-a280-ca725e5d616c
+5d3d74b2-d250-11ef-a280-ca725e5d616c
+25382f3f-d3fe-11ef-9330-8a89007beaac
+7c5669ae-d400-11ef-9330-8a89007beaac
+a2efd1e3-d4a3-11ef-9330-8a89007beaac
+2a279fcf-d4b1-11ef-9330-8a89007beaac
+ce6a843f-d4c0-11ef-9330-8a89007beaac
+5a1fdac2-d4cb-11ef-9330-8a89007beaac
+d72d54cf-d4d3-11ef-9330-8a89007beaac
+39cafb6b-d4ee-11ef-9330-8a89007beaac
+7d2bdbd7-d502-11ef-9330-8a89007beaac
+c8bf1751-d583-11ef-9330-8a89007beaac
+47fc5c8b-d723-11ef-9330-8a89007beaac
+9586f2e2-d732-11ef-9330-8a89007beaac
+af9c46c0-d751-11ef-9330-8a89007beaac
+1b7357e6-d7ca-11ef-9330-8a89007beaac
+38992ecc-d7e2-11ef-9330-8a89007beaac
+fc2ef608-d7e2-11ef-9330-8a89007beaac
+eb6f0c62-d7ef-11ef-9330-8a89007beaac
+0bbd13ef-d801-11ef-9330-8a89007beaac
+02b8485f-d803-11ef-9330-8a89007beaac
+69650dbd-d806-11ef-9330-8a89007beaac
+f6d53c52-d88d-11ef-9330-8a89007beaac
+fa8f6309-d890-11ef-9330-8a89007beaac
+1a31a00c-d8ad-11ef-9330-8a89007beaac
+d9ca143d-d8b4-11ef-9330-8a89007beaac
+059e0e86-d8b6-11ef-9330-8a89007beaac
+472a47b3-d4cf-11ef-9330-8a89007beaac
+91955f62-d94d-11ef-9330-8a89007beaac
+9eb09c3d-d96b-11ef-9330-8a89007beaac
+d0b8d273-d977-11ef-9330-8a89007beaac
+4b1234a9-d97f-11ef-9330-8a89007beaac
+b8250bf3-d988-11ef-9330-8a89007beaac
+4bc76040-d98b-11ef-9330-8a89007beaac
+76f2bc2c-d98d-11ef-9330-8a89007beaac
+b84224cc-d96a-11ef-9330-8a89007beaac
+74819f47-da36-11ef-9330-8a89007beaac
+c21bd5ee-da3e-11ef-9330-8a89007beaac
+7b4199d3-da44-11ef-9330-8a89007beaac
+33a8202d-da4a-11ef-9330-8a89007beaac
+39885414-da4b-11ef-9330-8a89007beaac
+5e7f31aa-da5d-11ef-9330-8a89007beaac
+5f16aef3-db02-11ef-9330-8a89007beaac
+e421a77e-db4b-11ef-9330-8a89007beaac
+4f14fc67-dbdc-11ef-9330-8a89007beaac
+161e054e-dc77-11ef-9330-8a89007beaac
+8eeb40a4-da6b-11ef-9330-8a89007beaac
+3c05b4ad-dc79-11ef-9330-8a89007beaac
+9f5cea2d-dc7e-11ef-9330-8a89007beaac
+da13420f-dc87-11ef-9330-8a89007beaac
+a717f81e-dc98-11ef-9330-8a89007beaac
+34bdb97a-dca4-11ef-9330-8a89007beaac
+212ec1e0-dcad-11ef-9330-8a89007beaac
+01dce766-dcb1-11ef-9330-8a89007beaac
+8977ab60-dd67-11ef-9330-8a89007beaac
+8db9f1f9-dd67-11ef-9330-8a89007beaac
+c536086a-dd6b-11ef-9330-8a89007beaac
+d4fe8690-dc96-11ef-9330-8a89007beaac
+e280ae41-dd73-11ef-9330-8a89007beaac
+12bfad6c-dd76-11ef-9330-8a89007beaac
+2afb8f73-dd81-11ef-9330-8a89007beaac
+48a47040-dd28-11ef-9330-8a89007beaac
+7264a34e-dcac-11ef-9330-8a89007beaac
+de78b049-de0e-11ef-9330-8a89007beaac
+646e35b1-de10-11ef-9330-8a89007beaac
+dce3ea54-de1d-11ef-9330-8a89007beaac
+973df9fc-de23-11ef-9330-8a89007beaac
+41c63251-de24-11ef-9330-8a89007beaac
+7ac107c7-de2b-11ef-9330-8a89007beaac
+51bfe253-dec5-11ef-9330-8a89007beaac
+681ef220-ded6-11ef-9330-8a89007beaac
+1fa640ad-dee8-11ef-9330-8a89007beaac
+14bdf4e6-deee-11ef-9330-8a89007beaac
+2211de70-deef-11ef-9330-8a89007beaac
+8ac1a686-def8-11ef-9330-8a89007beaac
+2a52de92-df06-11ef-9330-8a89007beaac
+ea835c7e-df08-11ef-9330-8a89007beaac
+5682fa5e-df09-11ef-9330-8a89007beaac
+a9a28f7b-dfc5-11ef-9330-8a89007beaac
+884c9d70-dfc9-11ef-9330-8a89007beaac
+56597a82-e174-11ef-b1a5-268d5f1e867d
+543319b3-e1ec-11ef-b1a5-268d5f1e867d
+ba2c9a82-e1ee-11ef-b1a5-268d5f1e867d
+995b736c-e1f0-11ef-b1a5-268d5f1e867d
+d11f636f-e1f1-11ef-b1a5-268d5f1e867d
+350f50b7-e1f6-11ef-b1a5-268d5f1e867d
+a7a4ba68-e1fa-11ef-b1a5-268d5f1e867d
+0023e1bc-e21b-11ef-b1a5-268d5f1e867d
+8a5ed280-e228-11ef-b1a5-268d5f1e867d
+575f27df-e2bb-11ef-b1a5-268d5f1e867d
+e1c7f63b-e2c6-11ef-b1a5-268d5f1e867d
+4daeae45-e2cb-11ef-b1a5-268d5f1e867d
+582cf894-e2d5-11ef-b1a5-268d5f1e867d
+2b490d91-e2d8-11ef-b1a5-268d5f1e867d
+20031cca-e2f0-11ef-a435-4678b66cba13
+498781d0-e2f0-11ef-a435-4678b66cba13
+86852a2f-e2f0-11ef-a435-4678b66cba13
+49930c1d-e2f1-11ef-a435-4678b66cba13
+e6b5d0d0-e2f2-11ef-a435-4678b66cba13
+1baf0ecd-e2f5-11ef-a435-4678b66cba13
+74f6deba-e2f5-11ef-a435-4678b66cba13
+f1317733-e2f5-11ef-a435-4678b66cba13
+0c654448-e2f7-11ef-a435-4678b66cba13
+08a58c8f-e2f8-11ef-a435-4678b66cba13
+250f0a28-e2f8-11ef-a435-4678b66cba13
+4ac3d823-e2f8-11ef-a435-4678b66cba13
+4dbe64c4-e2f8-11ef-a435-4678b66cba13
+54231db1-e2f8-11ef-a435-4678b66cba13
+56f54f1c-e2f8-11ef-a435-4678b66cba13
+9d90c74b-e2f8-11ef-a435-4678b66cba13
+e4400e53-e2f8-11ef-a435-4678b66cba13
+e2eb0068-e2f8-11ef-a435-4678b66cba13
+fbb035ad-e2f8-11ef-a435-4678b66cba13
+05398526-e2f9-11ef-a435-4678b66cba13
+281aa6ed-e2f9-11ef-a435-4678b66cba13
+6ad127b5-e2f9-11ef-a435-4678b66cba13
+9a12cff7-e2f9-11ef-a435-4678b66cba13
+ade288a9-e2f9-11ef-a435-4678b66cba13
+b7934904-e2f9-11ef-a435-4678b66cba13
+b797418b-e2f9-11ef-a435-4678b66cba13
+f3d25e9f-e2f9-11ef-a435-4678b66cba13
+0b9a07f0-e2fa-11ef-a435-4678b66cba13
+44e83970-e2fa-11ef-a435-4678b66cba13
+4eb9c4fd-e2fa-11ef-a435-4678b66cba13
+6e1abe84-e2fb-11ef-a435-4678b66cba13
+716215cc-e2fc-11ef-a435-4678b66cba13
+62b92589-e2fd-11ef-a435-4678b66cba13
+b4ebfd58-e2fd-11ef-a435-4678b66cba13
+c550c2ad-e2fd-11ef-a435-4678b66cba13
+18b93492-e2ff-11ef-a435-4678b66cba13
+3c6e92ad-e2ff-11ef-a435-4678b66cba13`
+
+	//fmt.Println(strings.ReplaceAll(myString, "\n", "','"))
+
+	// Split the string into lines
+	lines := strings.Split(myString, "\n")
+
+	// Use a map to track unique values
+	uniqueValues := make(map[string]bool)
+	var uniqueList []string
+
+	for _, line := range lines {
+		if _, exists := uniqueValues[line]; !exists {
+			uniqueValues[line] = true
+			uniqueList = append(uniqueList, line)
+		}
+	}
+
+	// Join the unique values with "','"
+	result := "'" + strings.Join(uniqueList, "','") + "'"
+
+	// Print the result
+	fmt.Println(result)
+}
+
+//
+//54231db1-e2f8-11ef-a435-4690c74b-e2f8-11ef-a435-4678b66cba13
+//54231db1-e2f8-11ef-a435-4678b66cba13
