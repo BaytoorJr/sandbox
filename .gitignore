@@ -1,1 +1,12 @@
-./Suleiman-api
+.idea
+data/
+mocks/
+keys/
+*.env
+.docker
+.project
+main
+.DS_Store
+gl-code-quality-report.json
+swagger.json
+grpcdoc.htm
